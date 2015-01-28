@@ -1,0 +1,24 @@
+import Data.List
+check x=if x>0 then True else False
+x=filter check [-2,1,2,3,5]
+checkN x= if x>0 then 1 else 0
+y= map checkN [-2,1,2,4,4,4]
+z=foldl (+) 0 [1,2,3,4,5]
+--filter:: (a->Bool)->[a]->[a]
+--map:: (a->b)-> [a}-> [b]
+--foldl:: (a->b->b)->b->[a]->b
+
+checkS a b=a*b
+p=foldl checkS 1 [1,2,3,4,5]
+
+data Tree a=Null|Node Int (Tree a) (Tree a)
+
+intersects::[[Int]]->[Int]
+intersects []=[]
+intersects (x:[])=x
+intersects (x1:x2:xs)=intersects $ (intersect x1 x2):xs
+
+
+r=zip [1,3,5,6] [1,2,3]
+s= zipWith (+) [1,3,5,6] [1,2,3]
+
